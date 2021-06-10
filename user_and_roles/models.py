@@ -20,3 +20,20 @@ class User(AbstractUser):
     image = models.ImageField(upload_to='user/image',null=False)
     role = models.IntegerField(choices=Role.choices)
 
+class Tourist_Profile(models.Model):
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
+    passport=models.ImageField(upload_to='images/tourist',null=False)
+    passport_number=models.BigIntegerField(null=False,blank=False)
+    description=models.CharField(max_length=1000,null=False,blank=False)
+    language=models.CharField(max_length=100)
+
+
+class Guide_Profile(models.Model):
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
+    citizenship=models.ImageField(upload_to='images/guide',null=False)
+    citizenship_number=models.BigIntegerField(null=False,blank=False)
+    
+
+
+class Destination(models.Model):
+    pass
