@@ -16,7 +16,6 @@ urlpatterns = [
     path('login/',views.login , name="login"),
     path('guide_profile/<int:pk>/', views.Guide_profile.as_view()),
     path('tourist_profile/<int:pk>/', views.Tourist_profile.as_view()),
-
-
+    path('destination/', views.Destinations.as_view()),
 ]
 
